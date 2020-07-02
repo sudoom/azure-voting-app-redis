@@ -14,12 +14,12 @@
             "type": "string",
             "defaultValue": "kubetestrg"
         },
-        // "clientId": {
-        //     "type": "string"
-        // },
-        // "clientSecret": {
-        //     "type": "securestring"
-        // },
+        "clientId": {
+            "type": "string"
+        },
+        "clientSecret": {
+            "type": "securestring"
+        },
         "agentPoolName": {
             "type": "string",
             "defaultValue": "agentpool"
@@ -67,8 +67,7 @@
         "adminUsername": {
             "type": "string",
             "defaultValue": "azureUser"
-        }
-        ,
+        },
         "sshPub": {
             "type": "string"
         }
@@ -116,11 +115,11 @@
                     }
                 },
                 "servicePrincipalProfile": {
-                    // "clientId": "[parameters('clientId')]",
-                    // "secret": "[parameters('clientSecret')]"
-                    "clientId": "2174ff5f-18f5-4d6f-8bf2-6f9969253d6a",
+                    "clientId": "[parameters('clientId')]",
+                    "secret": "[parameters('clientSecret')]"
+                    // "clientId": "2174ff5f-18f5-4d6f-8bf2-6f9969253d6a",
                     // "clientId": "[reference(resourceId('Microsoft.ContainerService/managedClusters', parameters('clusterName')), '2020-02-01', 'Full').properties.servicePrincipalProfile.clientId]",
-                    "secret": "SAPN3peJm8GOUeKn7Caxa~cmixZra8pHu1"
+                    // "secret": "SAPN3peJm8GOUeKn7Caxa~cmixZra8pHu1"
                 }
             }
         }
