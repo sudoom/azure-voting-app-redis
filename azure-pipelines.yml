@@ -30,3 +30,4 @@ stages:
             templateLocation: 'Linked artifact'
             csmFile: 'k8s.json'
             deploymentMode: 'Incremental'
+        # - task: Kubernetes@1
