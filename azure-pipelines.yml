@@ -24,14 +24,6 @@ stages:
             overrideParameters: '-clientId "$(clientId)" -clientSecret "$(clientSecret)" -sshPub "$(ssh_pub)"'
             deploymentMode: 'Incremental'
 
-        - task: AzureCLI@2
-          displayName:  'get kube cred'
-          inputs:
-            azureSubscription: 'kube-connection'
-            scriptType: 'bash'
-            scriptLocation: 'inlineScript'
-            inlineScript: 'az aks get-credentials --resource-group kubepipe --name kubetestcluster'
-
         - task: Kubernetes@1
           displayName: 'create kubectl'
           inputs:
@@ -40,3 +32,6 @@ stages:
             namespace: 'default'
             command: 'apply'
             arguments: '-f azure-vote-all-in-one-redis.yaml'
+        
+        - publish: '$(Build.SourcesDirectory)/dev'
+          artifact: devart
