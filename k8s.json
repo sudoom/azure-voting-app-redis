@@ -14,12 +14,12 @@
             "type": "string",
             "defaultValue": "kubetestrg"
         },
-        "clientId": {
-            "type": "string"
-        },
-        "clientSecret": {
-            "type": "securestring"
-        },
+        // "clientId": {
+        //     "type": "string"
+        // },
+        // "clientSecret": {
+        //     "type": "securestring"
+        // },
         "agentPoolName": {
             "type": "string",
             "defaultValue": "agentpool"
@@ -67,10 +67,11 @@
         "adminUsername": {
             "type": "string",
             "defaultValue": "azureUser"
-        },
-        "sshPub": {
-            "type": "string"
         }
+        // ,
+        // "sshPub": {
+        //     "type": "string"
+        // }
     },
     "variables": {},
     "resources": [
