@@ -61,10 +61,10 @@
             "type": "string",
             "value": "[reference(parameters('clusterName')).fqdn]"
         },
-        "secret": {
-            "type": "string",
-            "value": "[reference(resourceId('Microsoft.ContainerService/managedClusters', parameters('clusterName')), '2020-02-01', 'Full').properties.servicePrincipalProfile.secret]"
-        },
+        // "secret": {
+        //     "type": "string",
+        //     "value": "[reference(resourceId('Microsoft.ContainerService/managedClusters', parameters('clusterName')), '2020-02-01', 'Full').properties.servicePrincipalProfile.secret]"
+        // },
         "id": {
             "type": "string",
             "value": "[reference(resourceId('Microsoft.ContainerService/managedClusters', parameters('clusterName')), '2020-02-01', 'Full').properties.servicePrincipalProfile.clientId]"
