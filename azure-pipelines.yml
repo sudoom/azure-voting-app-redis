@@ -1,22 +1,14 @@
 trigger:
 - 'k8s'
-variables:
-  buildConfiguration: 'Release'
 
 stages:
   - stage: 'Build'
-    displayName: 'Build the web application'
+    displayName: 'Build kubernetes application'
     jobs: 
     - job: 'Build'
       displayName: 'Build job'
-      # pool:
-      #   vmImage: 'ubuntu-18.04'
-
-
-      # variables:
-      #   wwwrootDir: 'Tailspin.SpaceGame.Web/wwwroot'
-      #   dotnetSdkVersion: '3.1.300'
-
+      pool:
+        vmImage: 'ubuntu-18.04'
       steps:
         - task: AzureResourceManagerTemplateDeployment@3
           displayName: 'Create container registry'
@@ -29,7 +21,9 @@ stages:
             location: 'West Europe'
             templateLocation: 'Linked artifact'
             csmFile: 'k8s.json'
+            overrideParameters: '-clientId $(clientId) -clientSecret $(clientSecret) -sshPub $(ssh_pub)'
             deploymentMode: 'Incremental'
+
         - task: Kubernetes@1
           displayName: 'create kubectl'
           inputs:
