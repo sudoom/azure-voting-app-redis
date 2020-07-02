@@ -68,10 +68,10 @@
             "type": "string",
             "defaultValue": "azureUser"
         }
-        // ,
-        // "sshPub": {
-        //     "type": "string"
-        // }
+        ,
+        "sshPub": {
+            "type": "string"
+        }
     },
     "variables": {},
     "resources": [
@@ -109,8 +109,8 @@
                     "ssh": {
                         "publicKeys": [
                             {
-                                // "keyData": "[parameters('sshPub')]"
-                                "keyData": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/gK6kvEZIdilglB/+VX/G31HtssHsA5aMVlTWI52qnDNfRuthI9yIFr+VFWavbhL9dfRY5RJQTggC2RAijMIRoZhJvfnl7WLW3vZQx9mOUZ6eBPLngjPiCBzs+ayKc992EAEtAXVy+HW9/XS7PO4V7nTGSBNbm1QydKJUGA1b386J2JEyHbAqHO1nsDbUfZkNoBWMp029JuIdPWs866f9jkvcyU+pGXUs2QB83rMKQEEbKTEoJ85eNI6TklTL6FhBL+BUR96F97zNk5O6QFUF4i0c1gItru5GeEtUB0uPHN0zACxqDSWlWb0eDo/nm3wAeQRDs7Qpu2BDlqDWtCan"
+                                "keyData": "[parameters('sshPub')]"
+                                // "keyData": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/gK6kvEZIdilglB/+VX/G31HtssHsA5aMVlTWI52qnDNfRuthI9yIFr+VFWavbhL9dfRY5RJQTggC2RAijMIRoZhJvfnl7WLW3vZQx9mOUZ6eBPLngjPiCBzs+ayKc992EAEtAXVy+HW9/XS7PO4V7nTGSBNbm1QydKJUGA1b386J2JEyHbAqHO1nsDbUfZkNoBWMp029JuIdPWs866f9jkvcyU+pGXUs2QB83rMKQEEbKTEoJ85eNI6TklTL6FhBL+BUR96F97zNk5O6QFUF4i0c1gItru5GeEtUB0uPHN0zACxqDSWlWb0eDo/nm3wAeQRDs7Qpu2BDlqDWtCan"
                             }
                         ]
                     }

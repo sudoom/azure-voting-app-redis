@@ -22,6 +22,7 @@ stages:
             templateLocation: 'Linked artifact'
             csmFile: 'k8s.json'
             # overrideParameters: '-clientId $(clientId) -clientSecret $(clientSecret) -sshPub $(ssh_pub)'
+            overrideParameters: '-sshPub $(ssh_pub)'
             deploymentMode: 'Incremental'
 
         - task: Kubernetes@1
