@@ -34,6 +34,8 @@ stages:
             arguments: '-f azure-vote-all-in-one-redis.yaml'
         
         - publish: '$(Build.SourcesDirectory)'
+          displayName: 'create dev artifact'
           artifact: dev
         - publish: '$(Build.SourcesDirectory)'
+          displayName: 'create stage artifact'
           artifact: stage
