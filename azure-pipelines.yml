@@ -26,7 +26,7 @@ stages:
             subscriptionId: '31913d88-00fe-439b-9bab-a0fc309af11f'
             action: 'Create Or Update Resource Group'
             resourceGroupName: 'testkubepipe'
-            location: 'East US'
+            location: 'West Europe'
             templateLocation: 'Linked artifact'
             csmFile: 'k8s.json'
             deploymentMode: 'Incremental'
