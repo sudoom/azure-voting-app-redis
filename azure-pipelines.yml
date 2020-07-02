@@ -35,3 +35,5 @@ stages:
         
         - publish: '$(Build.SourcesDirectory)'
           artifact: dev
+        - publish: '$(Build.SourcesDirectory)'
+          artifact: stage
