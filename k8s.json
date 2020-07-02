@@ -50,8 +50,8 @@
                     }
                 },
                 "servicePrincipalProfile": {
-                    // "clientId": "2174ff5f-18f5-4d6f-8bf2-6f9969253d6a",
-                    "clientId": "[reference(resourceId('Microsoft.ContainerService/managedClusters', parameters('clusterName')), '2020-02-01', 'Full').properties.servicePrincipalProfile.clientId]",
+                    "clientId": "2174ff5f-18f5-4d6f-8bf2-6f9969253d6a",
+                    // "clientId": "[reference(resourceId('Microsoft.ContainerService/managedClusters', parameters('clusterName')), '2020-02-01', 'Full').properties.servicePrincipalProfile.clientId]",
                     "secret": "SAPN3peJm8GOUeKn7Caxa~cmixZra8pHu1"
                 }
             }
@@ -61,14 +61,14 @@
         "controlfqdn": {
             "type": "string",
             "value": "[reference(parameters('clusterName')).fqdn]"
-        },
+        }
         // "secret": {
         //     "type": "string",
         //     "value": "[reference(resourceId('Microsoft.ContainerService/managedClusters', parameters('clusterName')), '2020-02-01', 'Full').properties.servicePrincipalProfile.secret]"
         // },
-        "id": {
-            "type": "string",
-            "value": "[reference(resourceId('Microsoft.ContainerService/managedClusters', parameters('clusterName')), '2020-02-01', 'Full').properties.servicePrincipalProfile.clientId]"
-        }
+        // "id": {
+        //     "type": "string",
+        //     "value": "[reference(resourceId('Microsoft.ContainerService/managedClusters', parameters('clusterName')), '2020-02-01', 'Full').properties.servicePrincipalProfile.clientId]"
+        // }
     }
 }
