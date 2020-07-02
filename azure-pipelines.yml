@@ -33,5 +33,5 @@ stages:
             command: 'apply'
             arguments: '-f azure-vote-all-in-one-redis.yaml'
         
-        - publish: '$(Build.SourcesDirectory)/dev'
-          artifact: devart
+        - publish: '$(Build.SourcesDirectory)'
+          artifact: dev
