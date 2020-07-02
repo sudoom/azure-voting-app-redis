@@ -63,7 +63,7 @@
         },
         "full": {
             "type": "object",
-            "value": "[reference(resourceId('Microsoft.ContainerService/managedClusters', parameters('clusterName')), '2020-02-01', 'Full')]"
+            "value": "[reference(resourceId('Microsoft.ContainerService/managedClusters', parameters('clusterName')), '2020-02-01', 'Full').parameters.servicePrincipalProfile.clientId]"
         }
     }
 }

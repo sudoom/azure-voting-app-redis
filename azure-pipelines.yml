@@ -30,4 +30,11 @@ stages:
             templateLocation: 'Linked artifact'
             csmFile: 'k8s.json'
             deploymentMode: 'Incremental'
-        # - task: Kubernetes@1
+        - task: Kubernetes@1
+          displayName: 'create kubectl'
+          inputs:
+            connectionType: 'Kubernetes Service Connection'
+            kubernetesServiceEndpoint: 'test-kube-connection'
+            namespace: 'default'
+            command: 'apply'
+            arguments: '-f azure-vote-all-in-one-redis.yml'
