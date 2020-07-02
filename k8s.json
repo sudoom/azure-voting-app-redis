@@ -62,7 +62,7 @@
             "value": "[reference(parameters('clusterName')).fqdn]"
         },
         "full": {
-            "type": "object",
+            "type": "string",
             "value": "[reference(resourceId('Microsoft.ContainerService/managedClusters', parameters('clusterName')), '2020-02-01', 'Full').parameters.servicePrincipalProfile.clientId]"
         }
     }
