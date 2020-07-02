@@ -22,7 +22,7 @@ stages:
           displayName: 'Create container registry'
           inputs:
             deploymentScope: 'Resource Group'
-            azureResourceManagerConnection: 'mossad-connection'
+            azureResourceManagerConnection: 'kube-connection'
             subscriptionId: '31913d88-00fe-439b-9bab-a0fc309af11f'
             action: 'Create Or Update Resource Group'
             resourceGroupName: 'testkubepipe'
