@@ -109,7 +109,6 @@
                         "publicKeys": [
                             {
                                 "keyData": "[parameters('sshPub')]"
-                                // "keyData": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC/gK6kvEZIdilglB/+VX/G31HtssHsA5aMVlTWI52qnDNfRuthI9yIFr+VFWavbhL9dfRY5RJQTggC2RAijMIRoZhJvfnl7WLW3vZQx9mOUZ6eBPLngjPiCBzs+ayKc992EAEtAXVy+HW9/XS7PO4V7nTGSBNbm1QydKJUGA1b386J2JEyHbAqHO1nsDbUfZkNoBWMp029JuIdPWs866f9jkvcyU+pGXUs2QB83rMKQEEbKTEoJ85eNI6TklTL6FhBL+BUR96F97zNk5O6QFUF4i0c1gItru5GeEtUB0uPHN0zACxqDSWlWb0eDo/nm3wAeQRDs7Qpu2BDlqDWtCan"
                             }
                         ]
                     }
@@ -117,9 +116,7 @@
                 "servicePrincipalProfile": {
                     "clientId": "[parameters('clientId')]",
                     "secret": "[parameters('clientSecret')]"
-                    // "clientId": "2174ff5f-18f5-4d6f-8bf2-6f9969253d6a",
                     // "clientId": "[reference(resourceId('Microsoft.ContainerService/managedClusters', parameters('clusterName')), '2020-02-01', 'Full').properties.servicePrincipalProfile.clientId]",
-                    // "secret": "SAPN3peJm8GOUeKn7Caxa~cmixZra8pHu1"
                 }
             }
         }
