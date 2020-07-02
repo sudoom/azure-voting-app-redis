@@ -1,0 +1,32 @@
+trigger:
+- 'k8s'
+variables:
+  buildConfiguration: 'Release'
+
+stages:
+  - stage: 'Build'
+    displayName: 'Build the web application'
+    jobs: 
+    - job: 'Build'
+      displayName: 'Build job'
+      # pool:
+      #   vmImage: 'ubuntu-18.04'
+
+
+      # variables:
+      #   wwwrootDir: 'Tailspin.SpaceGame.Web/wwwroot'
+      #   dotnetSdkVersion: '3.1.300'
+
+      steps:
+        - task: AzureResourceManagerTemplateDeployment@3
+          displayName: 'Create container registry'
+          inputs:
+            deploymentScope: 'Resource Group'
+            azureResourceManagerConnection: 'mossad-connection'
+            subscriptionId: '31913d88-00fe-439b-9bab-a0fc309af11f'
+            action: 'Create Or Update Resource Group'
+            resourceGroupName: 'testkubepipe'
+            location: 'East US'
+            templateLocation: 'Linked artifact'
+            csmFile: 'k8s.json'
+            deploymentMode: 'Incremental'
