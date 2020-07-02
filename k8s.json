@@ -86,7 +86,6 @@
                 "adminUserEnabled": true
             }
         },
-
         {
             "name": "[parameters('clusterName')]",
             "type": "Microsoft.ContainerService/managedClusters",
