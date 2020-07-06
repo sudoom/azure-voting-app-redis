@@ -11,7 +11,7 @@ stages:
         vmImage: 'ubuntu-18.04'
       steps:
         - task: AzureResourceManagerTemplateDeployment@3
-          displayName: 'Create container registry'
+          displayName: 'Create container registry and kube cluster'
           inputs:
             deploymentScope: 'Resource Group'
             azureResourceManagerConnection: 'kube-connection'
@@ -24,19 +24,19 @@ stages:
             overrideParameters: '-clientId "$(clientId)" -clientSecret "$(clientSecret)" -sshPub "$(ssh_pub)"'
             deploymentMode: 'Incremental'
 
-        # - task: Kubernetes@1
-        #   displayName: 'create kubectl'
-        #   inputs:
-        #     connectionType: 'Kubernetes Service Connection'
-        #     kubernetesServiceEndpoint: 'test-kube-connection'
-        #     namespace: 'default'
-        #     command: 'apply'
-        #     arguments: '-f azure-vote-all-in-one-redis.yaml'
+        - task: Kubernetes@1
+          displayName: 'create kubectl'
+          inputs:
+            connectionType: 'Kubernetes Service Connection'
+            kubernetesServiceEndpoint: 'test-kube-connection'
+            namespace: 'default'
+            command: 'apply'
+            arguments: '-f azure-vote-all-in-one-redis.yaml'
         
-        # - publish: '$(Build.SourcesDirectory)'
-        #   displayName: 'create dev artifact'
-        #   artifact: dev
+        - publish: '$(Build.SourcesDirectory)'
+          displayName: 'create dev artifact'
+          artifact: dev
         
-        # - publish: '$(Build.SourcesDirectory)'
-        #   displayName: 'create stage artifact'
-        #   artifact: stage
+        - publish: '$(Build.SourcesDirectory)'
+          displayName: 'create stage artifact'
+          artifact: stage
